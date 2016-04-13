@@ -1,0 +1,38 @@
+{
+    "name": "Sumanai/NotifyChangeSig",
+    "type": "phpbb-extension",
+    "description": "Notify of change the user signature",
+    "homepage": "http://sumanai.ru/",
+    "version": "1.0.0",
+    "time": "2016-04-05",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Sumanai",
+            "homepage": "http://sumanai.ru/",
+            "email": "sumanai@ya.ru",
+            "role": "Developer"
+        },
+        {
+            "name": "romeo_piter",
+            "role": "Sponsor"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+      "phpbb/epv": "dev-master"
+    },
+    "extra": {
+        "display-name": "NotifyChangeSig",
+        "soft-require": {
+            "phpbb/phpbb": "3.1.*@dev"
+        },
+        "version-check": {
+            "host": "sumanai.ru",
+            "directory": "/ext/versioncheck",
+            "filename": "notifychangesig.json"
+        }
+    }
+}

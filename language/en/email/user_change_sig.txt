@@ -1,0 +1,11 @@
+Subject: Change the user signature
+
+Hello {USERNAME},
+
+User {CHANGE_SIG_USERNAME} create/edit signature to such:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+{SIG}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+You can change or delete this signature in the user profile.
+
+{EMAIL_SIG}

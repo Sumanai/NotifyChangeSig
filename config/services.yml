@@ -1,0 +1,43 @@
+services:
+    Sumanai.NotifyChangeSig.listener:
+        class: Sumanai\NotifyChangeSig\event\listener
+        tags:
+            - { name: event.listener }
+
+    Sumanai.NotifyChangeSig.ucp_signature:
+        class: Sumanai\NotifyChangeSig\services\ucp_signature
+        arguments:
+            - @auth
+            - @config
+            - @dbal.conn
+            - @request
+            - @Sumanai.NotifyChangeSig.helper
+            - @template
+            - @user
+            - %core.root_path%
+            - %core.php_ext%
+
+    Sumanai.NotifyChangeSig.helper:
+        class: Sumanai\NotifyChangeSig\services\helper
+        arguments:
+            - @dbal.conn
+            - @notification_manager
+            - %tables.notifications%
+
+    Sumanai.notification.type.notifychangesig:
+        class: Sumanai\NotifyChangeSig\notification\notifychangesig
+        scope: prototype # scope MUST be prototype for this to work!
+        arguments:
+            - @user_loader
+            - @dbal.conn
+            - @cache.driver
+            - @user
+            - @auth
+            - @config
+            - %core.root_path%
+            - %core.php_ext%
+            - %tables.notification_types%
+            - %tables.notifications%
+            - %tables.user_notifications%
+        tags:
+            - { name: notification.type }
